@@ -5,8 +5,8 @@ const SearchObject = (obj,Number) => {
     }
     for (let key in obj) {
         Key = `${key}`
-        if (Key === "number"){
-            let Result = obj.number === Number ? 'true' : 'false'
+        if (typeof obj[Key] === 'number'){
+            let Result = obj[Key] === Number ? 'true' : 'false'
             return Result
         }
     }
@@ -17,7 +17,7 @@ const object = {
         c: {
             b: {
                 a: {
-                    number: 20,
+                    num: 20,
                     str: 'hi'
                 }
             }
@@ -25,3 +25,7 @@ const object = {
     }
 }
 console.log(SearchObject(object,20))
+console.log(SearchObject(object,21))
+
+
+
