@@ -12,14 +12,14 @@ const HowManyInteger = (arr) => {
         if (typeof item === 'object'){
             arr1 = [...arr1,...item]
         }
-        if (typeof item === 'number'){
+        if (Number.isInteger(item) === true){
             number++
         }
     }
     return HowManyInteger(arr1)
 }
 
-console.log(HowManyInteger([[[5],3],0,2,['foo1'],[],[4,[5,1,6,0]],1]))
+console.log(HowManyInteger([[[5],3],0,2,['foo1'],[],[4,[5,1,6,0]],1,5.6]))
 
 
 
