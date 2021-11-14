@@ -1,16 +1,16 @@
-let Key
-const SearchObject = (obj,Number) => {
+let Result
+const SearchObject = (obj, Number) => {
     if (typeof obj !== "object") {
         return "pls enter your object arr"
     }
     for (let key in obj) {
-        Key = `${key}`
-        if (typeof obj[Key] === 'number'){
-            let Result = obj[Key] === Number ? 'true' : 'false'
-            return Result
+        if (typeof obj[key] === 'number') {
+            return Result = obj[key] === Number ? 'true' : 'false'
+        }if (typeof obj[key] === 'object'){
+            return SearchObject(obj[key], Number)
         }
     }
-    return SearchObject(obj[Key],Number)
+    return "false"
 }
 const object = {
     d: {
@@ -24,8 +24,7 @@ const object = {
         }
     }
 }
-console.log(SearchObject(object,20))
-console.log(SearchObject(object,21))
+console.log(SearchObject(object, 20))
 
 
 
